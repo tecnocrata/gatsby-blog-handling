@@ -1,7 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
+//This is a react component
 export default function Template({data}) {
+    //'data' is injected from GraphQL query
     const {markdownRemark: post} = data;
     //const post = data.markdownRemark;
     return (
