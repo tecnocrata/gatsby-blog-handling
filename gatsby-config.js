@@ -12,6 +12,6 @@ module.exports = {
         name: 'pages'
       }
     },
-    'gatsby-transformer-remark' //this transformer allosw grapqh query data from
+    'gatsby-transformer-remark' //this transformer allows grapqhql query data from
   ],
 };
