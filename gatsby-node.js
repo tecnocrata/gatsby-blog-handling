@@ -21,6 +21,7 @@
                      frontmatter {
                          path
                          title
+                         published
                      }
                  }
              }

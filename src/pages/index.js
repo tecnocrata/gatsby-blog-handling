@@ -11,7 +11,7 @@ class IndexPage extends Component {
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
         
-        <div>
+        <ul>
               {linksToRender.map((link, index) => (
                /*  <Link
                   key={link.id}
@@ -19,12 +19,11 @@ class IndexPage extends Component {
                   index={index}
                   link={link}
                 /> */
-                <div key={link.node.id}>
+                <li key={link.node.id}>
                 <a href={link.node.frontmatter.path}>{link.node.frontmatter.title}</a>
-                <br/>                
-                </div>
+                </li>
               ))}
-        </div>
+        </ul>
         
       </div>
     )
@@ -42,7 +41,10 @@ class IndexPage extends Component {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(limit:100) {
+    allMarkdownRemark(
+      limit:10
+      filter: {frontmatter: {published: { eq: true}}}
+    ) {
     edges {
       node {
         id
